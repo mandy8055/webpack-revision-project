@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+message="$(cat $1)"
+commit_regex='^\[JIRA-[0-9]+\]\[.+?\] .+'
+error_msg="Invalid commit message format. Please use: [JIRA-123][AUTHORNAME] commit message."
+
+if ! echo "$message" | grep -Eq "$commit_regex"; then
+  echo "$error_msg" >&2
+  exit 1
+fi
