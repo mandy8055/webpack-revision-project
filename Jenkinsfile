@@ -17,8 +17,9 @@ pipeline {
         sh 'pnpm install'
       }
     }
-    stage('Unit Test') {
+    stage('Unit Test and lint fix') {
       steps {
+        sh 'pnpm run lint:fix'
         sh 'pnpm run test'
       }
     }
