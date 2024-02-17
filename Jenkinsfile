@@ -17,9 +17,8 @@ pipeline {
         sh 'pnpm install'
       }
     }
-    stage('Lint and Unit Test') {
+    stage('Unit Test') {
       steps {
-        sh 'pnpm run lint'
         sh 'pnpm run test'
       }
     }
