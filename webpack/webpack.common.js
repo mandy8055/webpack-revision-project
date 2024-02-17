@@ -70,6 +70,7 @@ module.exports = {
   output: {
     filename: "[contenthash].bundle.js",
     path: path.resolve(__dirname, "..", "dist"),
+    publicPath: "/dist/",
     assetModuleFilename: "images/[hash][ext][query]",
   },
 };
